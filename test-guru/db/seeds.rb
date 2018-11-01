@@ -22,6 +22,21 @@ questions = Question.create!([
 	{body: "How to call variable?", test_id: tests[2].id}
 ])
 Answer.create!([
-	{body: ""}
+	{body: "item from dota 2", questions[0].id},
+	{body: "command shell", correct: true, questions[0].id},
+	{body: "cat .", questions[1].id},
+	{body: "ls .", correct: true, questions[1].id},
+	{body: "chmod a+r filename", questions[2].id},
+	{body: "chmod +x filename", correct: true, questions[2].id},
+	{body: "var == 1", questions[3].id},
+	{body: "var = 1", correct: true, questions[3].id}
+	{body: "SHOW", questions[4].id},
+	{body: "SELECT", correct: true, questions[4].id},
+	{body: "varname", question[5].id}, 
+	{body: "$varname", correct: true, question[5].id}
+])
 
+user = User.create!([
+	{login: "hookbil", first_name: "Fedor", last_name: "Ushakov"},
+	{login: "ivan", first_name: "Ivan", last_name: "Ivanov"}
 ])
