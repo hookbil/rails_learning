@@ -36,7 +36,14 @@ Answer.create!([
 	{body: "$varname", correct: true, question_id: questions[5].id}
 ])
 
-user = User.create!([
+users = User.create!([
 	{login: "hookbil", first_name: "Fedor", last_name: "Ushakov"},
 	{login: "ivan", first_name: "Ivan", last_name: "Ivanov"}
+])
+
+TestResult.create!([
+	{user_id: users[0].id, test_id: tests[0].id, completed: true},
+	{user_id: users[1].id, test_id: tests[1].id},
+	{user_id: users[1].id, test_id: tests[2].id, completed: true},
+	{user_id: users[1].id, test_id: tests[3].id}
 ])
