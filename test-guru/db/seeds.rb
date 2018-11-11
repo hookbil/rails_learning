@@ -7,11 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 categories = Category.create!([{title: "Bash"}, {title: "PostgreSQL"}, {title: "PHP"}])
+users = User.create!([
+	{login: "hookbil", first_name: "Fedor", last_name: "Ushakov"},
+	{login: "ivan", first_name: "Ivan", last_name: "Ivanov"}
+])
 tests = Test.create!([
-	{title: "Navigation in bash", category_id: categories[0].id},
-	{title: "Writing scripts on bash", category_id: categories[0].id, level: 1},
-	{title: "SQL basics", category_id: categories[1].id},
-	{title: "PHP basics", category_id: categories[2].id}
+	{ title: "Navigation in bash", category_id: categories[0].id, author_id: users[0].id },
+	{title: "Writing scripts on bash", category_id: categories[0].id, level: 1, author_id: users[0].id},
+	{title: "SQL basics", category_id: categories[1].id, author_id: users[0].id},
+	{title: "PHP basics", category_id: categories[2].id, author_id: users[0].id}
 ])
 questions = Question.create!([
 	{body: "What is the bash?", test_id: tests[0].id},
@@ -36,14 +40,11 @@ Answer.create!([
 	{body: "$varname", correct: true, question_id: questions[5].id}
 ])
 
-users = User.create!([
-	{login: "hookbil", first_name: "Fedor", last_name: "Ushakov"},
-	{login: "ivan", first_name: "Ivan", last_name: "Ivanov"}
-])
 
-TestResult.create!([
-	{user_id: users[0].id, test_id: tests[0].id, completed: true},
+
+TestStatus.create!([
+	{user_id: users[0].id, test_id: tests[0].id},
 	{user_id: users[1].id, test_id: tests[1].id},
-	{user_id: users[1].id, test_id: tests[2].id, completed: true},
+	{user_id: users[1].id, test_id: tests[2].id},
 	{user_id: users[1].id, test_id: tests[3].id}
 ])
