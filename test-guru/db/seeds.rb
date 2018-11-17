@@ -8,12 +8,12 @@
 
 categories = Category.create!([{title: "Bash"}, {title: "PostgreSQL"}, {title: "PHP"}])
 users = User.create!([
-	{login: "hookbil", first_name: "Fedor", last_name: "Ushakov"},
-	{login: "ivan", first_name: "Ivan", last_name: "Ivanov"}
+	{login: "hookbil", first_name: "Fedor", last_name: "Ushakov", email: "hookbil@gmail.com"},
+	{login: "ivan", first_name: "Ivan", last_name: "Ivanov", email: "dev@null.com"}
 ])
 tests = Test.create!([
 	{ title: "Navigation in bash", category_id: categories[0].id, author_id: users[0].id },
-	{title: "Writing scripts on bash", category_id: categories[0].id, level: 1, author_id: users[0].id},
+	{title: "Writing scripts on bash", category_id: categories[0].id, level: 2, author_id: users[0].id},
 	{title: "SQL basics", category_id: categories[1].id, author_id: users[0].id},
 	{title: "PHP basics", category_id: categories[2].id, author_id: users[0].id}
 ])

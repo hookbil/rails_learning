@@ -14,6 +14,7 @@ class Test < ApplicationRecord
   }
 
   validates :title, presence: true, uniqueness: { scope: :level}
+  validates :level, numericality: { only_integer: true, greater_than: 0 }
   def self.titles_by_category(category_title)
     joins("INNER JOIN categories ON tests.category_id = categories.id")
       .where(categories: { title: category_title }).order(:title).pluck(:title)
