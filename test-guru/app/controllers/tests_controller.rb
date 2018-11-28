@@ -7,36 +7,16 @@ class TestsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
-    #  render html: '<h1>All tests</h1>'.html_safe
-    #  byebug
-    #logger.info(self.object_id)
-    #respond_to do |format|
-    #  byebug
-    #  format.html { render plain: 'All tests' }
-    #  format.json {render json: { tests: Test.all } }
-    #end
     result = ["Class : #{params.class}", "Parameters: #{params.inspect}"]
     render plain: result.join("\n")
   end
   def show
-    #title = Test.first.title
-
-    #render inline: '<%= title %>'
     render inline: '<%= @test.title %>'
   end
-  def new
-  end
   def create
-    #result = ["Class : #{params.class}", "Parameters: #{params.inspect}"]
-		#render plain: result.join("\n")
 		test = Test.create(test_params)
-		render plain: test.inspect
-	end
-
-	def search
-    result = ["Class: #{params.class}", "Parameters: #{params.inspect}"]
-    
-    render plain: result.join("\n")
+    return render plain: test.inspect if test.save
+    render plain: "Ошибка"
 	end
 	
 	private
