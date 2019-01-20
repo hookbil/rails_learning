@@ -1,13 +1,2 @@
-<h1>Создать вопрос для теста</h1>
-
-<form action="/tests/<%= params[:test_id] %>/questions" method="post">
-  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-
-  <div>
-    <label for="question-body">Вопрос:</label>
-    <input type="text" name="question[body]" id="question-body">
-  </div>
-
-  <input type="submit" name="Создать">
-
-</form>
+<%= render 'form' %>
+<%= link_to 'Back', test_path(@test)%>

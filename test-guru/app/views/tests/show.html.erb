@@ -1,0 +1,16 @@
+<p>
+  <strong>Title: </strong>
+  <%= @test.title %>
+</p>
+
+<p>
+  <strong>Level: </strong>
+  <%= @test.level %>
+</p>
+
+<p>
+  <%= render @test.questions %>
+</p>
+<%= link_to 'New question', new_test_question_path(@test) %> |
+<%= link_to 'Edit', edit_test_path(@test) %> |
+<%= link_to 'Back', tests_path %>

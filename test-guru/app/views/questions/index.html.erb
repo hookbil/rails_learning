@@ -1,0 +1,13 @@
+<h1>All Questions</h1>
+
+<p>
+  <%= link_to 'New question', new_test_question_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Body</th>
+    <th colspan = "3">Actions</th>
+  </tr>
+  <%= render @questions %>
+</table>
