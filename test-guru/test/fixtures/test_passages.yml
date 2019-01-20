@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: 
+  user: one
   test: one
+  current_question: one
+  correct_question: 1
 
 two:
-  user: 
+  user: two
   test: two
+  current_question: two
+  correct_question: 1

@@ -7,7 +7,6 @@ class Answer < ApplicationRecord
   scope :correct, -> { where(correct: true) }
 
   def validate_answers_count
-    return if question.answers.length < 5
-    errors.add(:answers, 'Count of answers should be from 1 to 4')
+    errors.add(:question, 'Count of answers should be from 1 to 4') if question.answers.count >= 4
   end
 end
