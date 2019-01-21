@@ -7,12 +7,10 @@ class QuestionsController < ApplicationController
     render plain: questions.join("\n")
   end
 
-  def show
-    render plain: @question.body
-  end
+  def show; end
 
   def new
-    @question = Question.new
+    @question = @test.questions.new
   end
 
   def create

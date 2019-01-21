@@ -4,6 +4,7 @@
   <td><%= test.questions.count %></td>
   <td><%= test.category.title %></td>
   <td><%= test.author.first_name %></td>
+  <td><%= button_to 'Start', start_test_path(test)%></td>
   <td><%= link_to 'Show', test_path(test)%></td>
   <td><%= link_to 'Edit', edit_test_path(test)%></td>
   <td><%= link_to 'Delete',

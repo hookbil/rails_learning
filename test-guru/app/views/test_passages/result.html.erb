@@ -1,0 +1,16 @@
+<h1> The <%= @test_passage.test.title %> test was completed! </h1>
+
+<% if @test_passage.passed? %>
+  
+  <p>Congratulations! Test passed! </p>
+  <font color="green">Your result is: <%= @test_passage.total_rating %>% </font>
+<% else %>
+  <p>Test failed</p>
+  <font color="red">Your result is: <%= @test_passage.total_rating %>% </font>
+<% end %>
+
+<p>
+  <%= link_to 'Back to all tests', tests_path %>
+</p>
+
+
